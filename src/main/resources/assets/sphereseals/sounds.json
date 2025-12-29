@@ -1,0 +1,39 @@
+{
+  "sphere_seal_death": {
+    "subtitle": "sounds.sphereseals.sphere_seal_death",
+    "sounds": [
+      "sphereseals:sphere_seal_death"
+    ]
+  },
+
+  "sphere_seal_idle": {
+    "subtitle": "sounds.sphereseals.sphere_seal_idle",
+    "sounds": [
+      "sphereseals:sphere_seal_idle1",
+      "sphereseals:sphere_seal_idle2",
+      "sphereseals:sphere_seal_idle3",
+      "sphereseals:sphere_seal_idle4"
+    ]
+  },
+
+  "sphere_seal_clap": {
+    "subtitle": "sounds.sphereseals.sphere_seal_clap",
+    "sounds": [
+      "sphereseals:sphere_seal_clap"
+    ]
+  },
+
+  "sphere_seal_pet": {
+    "subtitle": "sounds.sphereseals.sphere_seal_pet",
+    "sounds": [
+      "sphereseals:sphere_seal_pet"
+    ]
+  },
+
+  "sphere_seal_hurt": {
+    "subtitle": "sounds.sphereseals.sphere_seal_hurt",
+    "sounds": [
+      "sphereseals:sphere_seal_hurt"
+    ]
+  }
+}

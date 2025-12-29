@@ -1,0 +1,35 @@
+{
+	"schemaVersion": 1,
+	"id": "sphere-seals",
+	"version": "${version}",
+	"name": "Sphere Seals",
+	"description": "Adds sphere seals to Minecraft.",
+	"authors": [
+		"Idipug"
+	],
+	"contact": {
+	},
+	"license": "Apache-2.0",
+	"icon": "assets/sphereseals/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.idipug.sphereseals.SphereSeals"
+		],
+		"fabric-datagen": [
+			"com.idipug.sphereseals.SphereSealsDataGenerator"
+		],
+		"client": [
+			"com.idipug.sphereseals.SphereSealsClient"
+		]
+	},
+	"mixins": [
+		"sphereseals.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.3",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

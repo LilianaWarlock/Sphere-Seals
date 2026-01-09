@@ -16,7 +16,7 @@ import java.util.function.Function;
 
 public class ModItems {
 public static final Item SPHERE_SEAL_SPAWN_EGG = registerItem("sphere_seal_spawn_egg",
-        setting -> new  SpawnEggItem(ModEntities.SPHERE_SEAL, 0x9CC0DF, 0xFFFFFF, setting));
+        setting -> new  SpawnEggItem(ModEntities.SPHERE_SEAL, setting));
 
     private static Item registerItem(String name, Function<Item.Settings, Item> function) {
         return Registry.register(Registries.ITEM, Identifier.of(SphereSeals.MOD_ID, name),

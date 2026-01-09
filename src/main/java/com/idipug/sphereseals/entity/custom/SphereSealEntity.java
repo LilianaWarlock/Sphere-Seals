@@ -4,6 +4,7 @@ import com.idipug.sphereseals.entity.ModEntities;
 import com.idipug.sphereseals.sounds.ModSounds;
 import net.minecraft.entity.AnimationState;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -57,9 +58,10 @@ public class SphereSealEntity extends AnimalEntity {
 
     public static DefaultAttributeContainer.Builder createAttributes() {
         return MobEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 14)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.2F)
-                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 20);
+                .add(EntityAttributes.MAX_HEALTH, 14)
+                .add(EntityAttributes.MOVEMENT_SPEED, 0.2F)
+                .add(EntityAttributes.FOLLOW_RANGE, 20)
+                .add(EntityAttributes.TEMPT_RANGE, 12);
     }
 
     private void setupAnimationStates() {
@@ -132,7 +134,7 @@ public class SphereSealEntity extends AnimalEntity {
 
     @Override
     public @Nullable PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return ModEntities.SPHERE_SEAL.create(world);
+        return ModEntities.SPHERE_SEAL.create(world, SpawnReason.BREEDING);
     }
 
     @Override

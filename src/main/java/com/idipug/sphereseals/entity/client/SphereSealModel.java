@@ -4,18 +4,19 @@ import com.idipug.sphereseals.SphereSeals;
 import com.idipug.sphereseals.entity.custom.SphereSealEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
+import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
-import net.minecraft.client.render.entity.model.SinglePartEntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 
-public class SphereSealModel<T extends SphereSealEntity> extends SinglePartEntityModel<T> {
+public class SphereSealModel extends EntityModel<SphereSealRenderState> {
     public static final EntityModelLayer SPHERE_SEAL = new EntityModelLayer(Identifier.of(SphereSeals.MOD_ID, "spheal"), "main");
     private final ModelPart root;
     private final ModelPart spheal;
 
         public SphereSealModel(ModelPart root) {
+            super(root);
             this.root = root;
             this.spheal = root.getChild("spheal");
         }
@@ -65,61 +66,48 @@ public class SphereSealModel<T extends SphereSealEntity> extends SinglePartEntit
         }
 
         @Override
-        public void setAngles(SphereSealEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-            this.getPart().traverse().forEach(ModelPart::resetTransform);
+        public void setAngles(SphereSealRenderState state) {
+            super.setAngles(state);
 
-            if (entity.clapAnimationState.isRunning()) {
-                this.updateAnimation(
-                        entity.clapAnimationState,
+            if (state.clapAnimationState.isRunning()) {
+                this.animate(
+                        state.clapAnimationState,
                         SphereSealAnimations.clap_clap,
-                        ageInTicks,
+                        state.age,
                         1.0f
                 );
             }
-
-            else if (entity.petAnimationState.isRunning()) {
-                this.updateAnimation(entity.petAnimationState,
+            else if (state.petAnimationState.isRunning()) {
+                this.animate(
+                        state.petAnimationState,
                         SphereSealAnimations.pet_pet,
-                        ageInTicks,
-                        1.0f);
+                        state.age,
+                        1.0f
+                );
             }
-
-           else if (entity.rollAnimationState.isRunning()) {
-                this.updateAnimation(
-                        entity.rollAnimationState,
+            else if (state.rollAnimationState.isRunning()) {
+                this.animate(
+                        state.rollAnimationState,
                         SphereSealAnimations.roll,
-                        ageInTicks,
+                        state.age,
                         1.0f
                 );
             }
-
-            else if (entity.waddleAnimationState.isRunning()) {
-                this.updateAnimation(
-                        entity.waddleAnimationState,
+            else if (state.waddleAnimationState.isRunning()) {
+                this.animate(
+                        state.waddleAnimationState,
                         SphereSealAnimations.waddle,
-                        ageInTicks,
+                        state.age,
                         1.0f
                 );
             }
-
             else {
-                this.updateAnimation(
-                        entity.idleAnimationState,
+                this.animate(
+                        state.idleAnimationState,
                         SphereSealAnimations.idle,
-                        ageInTicks,
+                        state.age,
                         1.0f
                 );
             }
-        }
-
-
-        @Override
-        public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, int color) {
-            spheal.render(matrices, vertexConsumer, light, overlay, color);
-        }
-
-        @Override
-        public ModelPart getPart() {
-            return root;
         }
 }

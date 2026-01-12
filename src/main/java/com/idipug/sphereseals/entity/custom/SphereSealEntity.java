@@ -77,7 +77,7 @@ public class SphereSealEntity extends AnimalEntity {
     public void tick() {
         super.tick();
 
-        if (!this.getWorld().isClient()) return;
+        if (!this.getEntityWorld().isClient()) return;
 
 
         if (petTicks > 0) {
@@ -144,7 +144,7 @@ public class SphereSealEntity extends AnimalEntity {
 
         if (stack.isEmpty()) {
 
-            if (!this.getWorld().isClient()) {
+            if (!this.getEntityWorld().isClient()) {
                 this.playSound(
                         ModSounds.SPHERE_SEAL_PET,
                         0.4F,
@@ -152,7 +152,7 @@ public class SphereSealEntity extends AnimalEntity {
                 );
             }
 
-            if (this.getWorld().isClient()) {
+            if (this.getEntityWorld().isClient()) {
                 petTicks = 60;
                 petAnimationState.start(this.age);
             }
@@ -160,13 +160,13 @@ public class SphereSealEntity extends AnimalEntity {
             return ActionResult.SUCCESS;
         }
 
-        if (stack.isOf(Items.SALMON) && this.getWorld().isClient()) {
+        if (stack.isOf(Items.SALMON) && this.getEntityWorld().isClient()) {
             this.clapAnimationState.start(this.age);
             this.clapTicks = 45;
             return ActionResult.SUCCESS;
         }
 
-        if (!this.getWorld().isClient()) {
+        if (!this.getEntityWorld().isClient()) {
             this.playSound(
                     ModSounds.SPHERE_SEAL_CLAP,
                     5.0F,
@@ -182,7 +182,7 @@ public class SphereSealEntity extends AnimalEntity {
     protected void eat(PlayerEntity player, Hand hand, ItemStack stack) {
         super.eat(player, hand, stack);
 
-        if (!this.getWorld().isClient()) {
+        if (!this.getEntityWorld().isClient()) {
             this.playSound(
                     ModSounds.SPHERE_SEAL_CLAP,
                     5.0F,
@@ -191,7 +191,7 @@ public class SphereSealEntity extends AnimalEntity {
         }
 
 
-        if (this.getWorld().isClient()) {
+        if (this.getEntityWorld().isClient()) {
             clapTicks = 45;
             clapAnimationState.start(this.age);
         }

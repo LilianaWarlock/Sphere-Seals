@@ -67,7 +67,7 @@ public class SphereSealAnimations {
                     new Keyframe(0.75F, AnimationHelper.createRotationalVector(0.0F, 0.0F, -5.0F), Transformation.Interpolations.CUBIC),
                     new Keyframe(1.0F, AnimationHelper.createRotationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC)
             ))
-            .addBoneAnimation("spheal", new Transformation(Transformation.Targets.TRANSLATE,
+            .addBoneAnimation("spheal", new Transformation(Transformation.Targets.MOVE_ORIGIN,
                     new Keyframe(0.0F, AnimationHelper.createTranslationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR),
                     new Keyframe(0.25F, AnimationHelper.createTranslationalVector(0.0F, 3.0F, 0.0F), Transformation.Interpolations.CUBIC),
                     new Keyframe(0.5F, AnimationHelper.createTranslationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR),
@@ -83,7 +83,7 @@ public class SphereSealAnimations {
             new Keyframe(1.75F, AnimationHelper.createRotationalVector(0.0F, 0.0F, 360.0F), Transformation.Interpolations.CUBIC),
             new Keyframe(2.5F, AnimationHelper.createRotationalVector(0.0F, 0.0F, 360.0F), Transformation.Interpolations.CUBIC)
             ))
-            .addBoneAnimation("spheal", new Transformation(Transformation.Targets.TRANSLATE,
+            .addBoneAnimation("spheal", new Transformation(Transformation.Targets.MOVE_ORIGIN,
 			new Keyframe(0.0F, AnimationHelper.createTranslationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR),
             new Keyframe(0.75F, AnimationHelper.createTranslationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR),
             new Keyframe(1.25F, AnimationHelper.createTranslationalVector(0.0F, 10.0F, 0.0F), Transformation.Interpolations.CUBIC),
@@ -170,7 +170,7 @@ public class SphereSealAnimations {
                     new Keyframe(0.75F, AnimationHelper.createRotationalVector(270.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR),
                     new Keyframe(1.0F, AnimationHelper.createRotationalVector(360.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR)
             ))
-            .addBoneAnimation("spheal", new Transformation(Transformation.Targets.TRANSLATE,
+            .addBoneAnimation("spheal", new Transformation(Transformation.Targets.MOVE_ORIGIN,
                     new Keyframe(0.0F, AnimationHelper.createTranslationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR),
                     new Keyframe(0.25F, AnimationHelper.createTranslationalVector(0.0F, 4.0F, 4.0F), Transformation.Interpolations.LINEAR),
                     new Keyframe(0.5F, AnimationHelper.createTranslationalVector(0.0F, 8.0F, 0.0F), Transformation.Interpolations.LINEAR),
@@ -215,7 +215,7 @@ public class SphereSealAnimations {
             new Keyframe(2.0417F, AnimationHelper.createRotationalVector(-90.0F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC),
             new Keyframe(2.25F, AnimationHelper.createRotationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC)
             ))
-            .addBoneAnimation("flipperleft", new Transformation(Transformation.Targets.TRANSLATE,
+            .addBoneAnimation("flipperleft", new Transformation(Transformation.Targets.MOVE_ORIGIN,
 			new Keyframe(0.0F, AnimationHelper.createTranslationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC),
             new Keyframe(0.2917F, AnimationHelper.createTranslationalVector(0.0F, 0.0F, -2.0F), Transformation.Interpolations.CUBIC),
             new Keyframe(0.4583F, AnimationHelper.createTranslationalVector(-4.0F, 0.0F, -2.0F), Transformation.Interpolations.CUBIC),
@@ -247,7 +247,7 @@ public class SphereSealAnimations {
             new Keyframe(2.0417F, AnimationHelper.createRotationalVector(-90.0F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC),
             new Keyframe(2.25F, AnimationHelper.createRotationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC)
             ))
-            .addBoneAnimation("flipperight", new Transformation(Transformation.Targets.TRANSLATE,
+            .addBoneAnimation("flipperight", new Transformation(Transformation.Targets.MOVE_ORIGIN,
 			new Keyframe(0.0F, AnimationHelper.createTranslationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC),
             new Keyframe(0.2917F, AnimationHelper.createTranslationalVector(0.0F, 0.0F, -2.0F), Transformation.Interpolations.CUBIC),
             new Keyframe(0.4583F, AnimationHelper.createTranslationalVector(4.0F, 0.0F, -2.0F), Transformation.Interpolations.CUBIC),
@@ -343,7 +343,7 @@ public class SphereSealAnimations {
             new Keyframe(2.0417F, AnimationHelper.createRotationalVector(-15.0F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC),
             new Keyframe(2.25F, AnimationHelper.createRotationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC)
             ))
-            .addBoneAnimation("spheal", new Transformation(Transformation.Targets.TRANSLATE,
+            .addBoneAnimation("spheal", new Transformation(Transformation.Targets.MOVE_ORIGIN,
 			new Keyframe(0.0F, AnimationHelper.createTranslationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR),
             new Keyframe(0.2917F, AnimationHelper.createTranslationalVector(0.0F, 1.0F, 0.0F), Transformation.Interpolations.LINEAR),
             new Keyframe(2.0417F, AnimationHelper.createTranslationalVector(0.0F, 1.0F, 0.0F), Transformation.Interpolations.LINEAR),

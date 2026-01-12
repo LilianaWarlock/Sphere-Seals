@@ -4,6 +4,7 @@ import com.idipug.sphereseals.SphereSeals;
 import com.idipug.sphereseals.entity.custom.SphereSealEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
+import net.minecraft.client.render.entity.animation.Animation;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.client.util.math.MatrixStack;
@@ -15,10 +16,24 @@ public class SphereSealModel extends EntityModel<SphereSealRenderState> {
     private final ModelPart root;
     private final ModelPart spheal;
 
+    private final Animation idle;
+    private final Animation waddle;
+    private final Animation roll_over;
+    private final Animation pet_pet;
+    private final Animation roll;
+    private final Animation clap_clap;
+
         public SphereSealModel(ModelPart root) {
             super(root);
             this.root = root;
             this.spheal = root.getChild("spheal");
+
+            this.idle = SphereSealAnimations.idle.createAnimation(root);
+            this.waddle = SphereSealAnimations.waddle.createAnimation(root);
+            this.roll_over = SphereSealAnimations.roll_over.createAnimation(root);
+            this.pet_pet = SphereSealAnimations.pet_pet.createAnimation(root);
+            this.roll = SphereSealAnimations.roll.createAnimation(root);
+            this.clap_clap = SphereSealAnimations.clap_clap.createAnimation(root);
         }
         public static TexturedModelData getTexturedModelData() {
             ModelData modelData = new ModelData();
@@ -70,41 +85,36 @@ public class SphereSealModel extends EntityModel<SphereSealRenderState> {
             super.setAngles(state);
 
             if (state.clapAnimationState.isRunning()) {
-                this.animate(
+                this.clap_clap.apply(
                         state.clapAnimationState,
-                        SphereSealAnimations.clap_clap,
                         state.age,
                         1.0f
                 );
             }
             else if (state.petAnimationState.isRunning()) {
-                this.animate(
+                this.pet_pet.apply(
                         state.petAnimationState,
-                        SphereSealAnimations.pet_pet,
                         state.age,
                         1.0f
                 );
             }
             else if (state.rollAnimationState.isRunning()) {
-                this.animate(
+                this.roll.apply(
                         state.rollAnimationState,
-                        SphereSealAnimations.roll,
                         state.age,
                         1.0f
                 );
             }
             else if (state.waddleAnimationState.isRunning()) {
-                this.animate(
+                this.waddle.apply(
                         state.waddleAnimationState,
-                        SphereSealAnimations.waddle,
                         state.age,
                         1.0f
                 );
             }
             else {
-                this.animate(
+                this.idle.apply(
                         state.idleAnimationState,
-                        SphereSealAnimations.idle,
                         state.age,
                         1.0f
                 );

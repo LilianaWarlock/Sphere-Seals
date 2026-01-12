@@ -1,9 +1,6 @@
 package com.idipug.sphereseals.entity.client;// Save this class in your mod and generate all required imports
 
-import net.minecraft.client.render.entity.animation.Animation;
-import net.minecraft.client.render.entity.animation.AnimationHelper;
-import net.minecraft.client.render.entity.animation.Keyframe;
-import net.minecraft.client.render.entity.animation.Transformation;
+import net.minecraft.client.render.entity.animation.*;
 
 /**
  * Made with Blockbench 5.0.5
@@ -11,7 +8,7 @@ import net.minecraft.client.render.entity.animation.Transformation;
  * @author idipug
  */
 public class SphereSealAnimations {
-    public static final Animation idle = Animation.Builder.create(2.0F).looping()
+    public static final AnimationDefinition idle = AnimationDefinition.Builder.create(2.0F).looping()
             .addBoneAnimation("tailwhack", new Transformation(Transformation.Targets.ROTATE,
                     new Keyframe(0.0F, AnimationHelper.createRotationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC),
                     new Keyframe(0.5F, AnimationHelper.createRotationalVector(10.0F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC),
@@ -38,7 +35,7 @@ public class SphereSealAnimations {
             ))
             .build();
 
-    public static final Animation waddle = Animation.Builder.create(1.0F).looping()
+    public static final AnimationDefinition waddle = AnimationDefinition.Builder.create(1.0F).looping()
             .addBoneAnimation("tailwhack", new Transformation(Transformation.Targets.ROTATE,
                     new Keyframe(0.0F, AnimationHelper.createRotationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC),
                     new Keyframe(0.25F, AnimationHelper.createRotationalVector(25.0F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC),
@@ -76,7 +73,7 @@ public class SphereSealAnimations {
             ))
             .build();
 
-    public static final Animation roll_over = Animation.Builder.create(2.5F)
+    public static final AnimationDefinition roll_over = AnimationDefinition.Builder.create(2.5F)
             .addBoneAnimation("spheal", new Transformation(Transformation.Targets.ROTATE,
 			new Keyframe(0.0F, AnimationHelper.createRotationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC),
             new Keyframe(0.75F, AnimationHelper.createRotationalVector(0.0F, 0.0F, -25.0F), Transformation.Interpolations.CUBIC),
@@ -92,7 +89,7 @@ public class SphereSealAnimations {
             ))
             .build();
 
-    public static final Animation pet_pet = Animation.Builder.create(3.1667F)
+    public static final AnimationDefinition pet_pet = AnimationDefinition.Builder.create(3.1667F)
             .addBoneAnimation("tailwhack", new Transformation(Transformation.Targets.ROTATE,
 			new Keyframe(0.0F, AnimationHelper.createRotationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC),
             new Keyframe(0.2917F, AnimationHelper.createRotationalVector(25.0F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC),
@@ -147,7 +144,7 @@ public class SphereSealAnimations {
             ))
             .build();
 
-    public static final Animation roll = Animation.Builder.create(1.0F).looping()
+    public static final AnimationDefinition roll = AnimationDefinition.Builder.create(1.0F).looping()
             .addBoneAnimation("tailwhack", new Transformation(Transformation.Targets.ROTATE,
                     new Keyframe(0.0F, AnimationHelper.createRotationalVector(-80.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR)
             ))
@@ -182,7 +179,7 @@ public class SphereSealAnimations {
             ))
             .build();
 
-    public static final Animation clap_clap = Animation.Builder.create(2.25F)
+    public static final AnimationDefinition clap_clap = AnimationDefinition.Builder.create(2.25F)
             .addBoneAnimation("tailwhack", new Transformation(Transformation.Targets.ROTATE,
 			new Keyframe(0.0F, AnimationHelper.createRotationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC),
             new Keyframe(0.2917F, AnimationHelper.createRotationalVector(17.5F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC),
